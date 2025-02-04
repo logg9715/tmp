@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.member">
+	<select id="select_login_check" resultType="java.util.Map">
+		select *, 
+		case when tmi_level=100 then '마스터'
+		     when tmi_level=90 then '관리자'
+		     when tmi_level=80 then '팀장'
+		     else '일반사용자'
+		end as levelName from tbl_manager_info 
+		left outer join tbl_group_info on tgi_code=tmi_tgicode where tmi_pwd=#{userPwd} and tmi_id=#{userId} and tmi_level != 0 and tmi_level is not null
+	</select>
+	
+	<select id="select_group_info" resultType="java.util.Map">
+		select * from tbl_group_info order by tgi_code asc
+	</select>
+	
+	<select id="select_overlapcheck_id" resultType="int" parameterType="String">
+		select count(tmi_code) from tbl_manager_info where tmi_id=#{_parameter} 
+	</select>
+	
+	<select id="select_find_password" resultType="String" parameterType="java.util.Map">
+		select top 1 tmi_pwd from tbl_manager_info where tmi_email=#{findEmail} and tmi_id=#{findId} 
+	</select>
+	
+	<insert id="insert_member_info" parameterType="java.util.Map">
+		insert into tbl_manager_info(
+			tmi_id,
+			tmi_pwd,
+			tmi_email,
+			tmi_name,
+			tmi_tel,
+			tmi_tel1,
+			tmi_tgicode,
+			tmi_is_logined,
+			tmi_level
+		) values(
+			#{user_id},
+			#{user_pwd},
+			#{user_email},
+			#{user_name},
+			#{user_cp},
+			#{user_cp2},
+			#{dept},
+			0,
+			0			
+		)
+	</insert>
+	
+</mapper>

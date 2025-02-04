@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.inventory">
+	<select id="select_inventory_data" resultType="java.util.Map">
+		select *,(select sum(case when tis_type=1 then tis_count else 0 end)  from tbl_inventory_sub where tis_tiicode=tii_code) purchaseCount,
+		(select sum(case when tis_type=2 then tis_count else 0 end) from tbl_inventory_sub where tis_tiicode=tii_code) salesCount
+		from tbl_inventory_info order by tii_code asc
+	</select>
+	
+	<select id="select_detail_inventoryinfo" resultType="java.util.Map" parameterType="int">
+		select top 1 * from tbl_inventory_info where tii_code=${value}
+	</select>	
+	
+	<insert id="insert_inventory_info" parameterType="java.util.Map">
+		insert into tbl_inventory_info(
+			tii_tmicode,
+			tii_name,
+			tii_purchase_company,
+			tii_manager,
+			tii_tel,
+			tii_url
+		) values(
+			${userCode},
+			#{text_product_name},
+			#{text_purchase_company},
+			#{text_manager},
+			#{text_tel},
+			#{text_url}			
+		)
+	</insert>
+	
+	<update id="update_inventory_info" parameterType="java.util.Map">
+		update tbl_inventory_info set
+			tii_tmicode=#{userCode},
+			tii_name=#{text_product_name},
+			tii_purchase_company=#{text_purchase_company},
+			tii_manager=#{text_manager},
+			tii_tel=#{text_tel},
+			tii_url=#{text_url}
+			where tii_code=#{inventoryCode}
+	</update>
+	
+	<delete id="delete_inventory_info" parameterType="int">	
+    	delete from tbl_inventory_info where tii_code=${value};
+    	delete from tbl_inventory_sub where tis_tiicode=${value}
+	</delete>
+	
+	<select id="select_inventory_subdata" resultType="java.util.Map" parameterType="java.util.Map">
+		select *, case when tis_type=1 then '입고' 
+		               when tis_type=2 then '출고'
+		               else '기타' end as typeName
+	    from tbl_inventory_sub where tis_tiicode=${inventoryCode} 
+		<choose>
+  			<when test="searchType == 1 and searchData != ''"> and tis_used_type like '%' + #{searchData} + '%' </when>
+  			<when test="searchType == 2 and searchData != ''"> and tis_event_date like '%' + #{searchData} + '%' </when>
+		</choose>
+		order by tis_code asc
+	</select>
+	
+	<select id="select_detail_inventorysubinfo" resultType="java.util.Map" parameterType="int">
+		select top 1 * from tbl_inventory_sub where tis_code=${value}
+	</select>	
+	
+	<insert id="insert_inventory_subinfo" parameterType="java.util.Map">
+		insert into tbl_inventory_sub(
+			tis_tiicode,
+			tis_tmicode,
+			tis_type,
+			tis_used_type,
+			tis_event_date,
+			tis_count,
+			tis_price,
+			tis_total_price,
+			tis_recipient,
+			tis_etc
+		) values(
+			${inventoryCode},
+			${userCode},		
+			${sel_inventory_type},		
+			#{text_event_type},		
+			#{date_event_day},		
+			${text_count},		
+			${text_price},		
+			${text_total_price},		
+			#{text_recipient},		
+			#{inventorySubEditor}		
+		)
+	</insert>
+	
+	<update id="update_inventory_subinfo" parameterType="java.util.Map">
+		update tbl_inventory_sub set
+			tis_tmicode=${userCode},
+			tis_type=${sel_inventory_type},
+			tis_used_type=#{text_event_type},
+			tis_event_date=#{date_event_day},
+			tis_count=${text_count},
+			tis_price=${text_price},
+			tis_total_price=${text_total_price},
+			tis_recipient=#{text_recipient},
+			tis_etc=#{inventorySubEditor}
+			where tis_code=${inventorySubCode}
+	</update>
+	
+	<delete id="delete_inventory_subinfo" parameterType="int">	
+    	delete from tbl_inventory_sub where tis_code=${value}
+	</delete>
+	
+	<select id="select_inventory_count" resultType="java.util.Map" parameterType="int">
+		select sum(case when tis_type=1 then tis_count else 0 end) as purchaseCount,sum(case when tis_type=2 then tis_count else 0 end) as salesCount from tbl_inventory_sub where tis_tiicode=${value}
+	</select>	
+</mapper>

@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+.inventory_modal,
+.inventory_tmsc_modal {
+    width: 550px;
+}
+.inventory_modal .input_tit{
+    min-width: 100px;
+}
+.inventory_tmsc_modal .input_tit{
+    min-width: 50px;
+}
+.inventory_tmsc_modal .editor{
+    height: 160px;
+}
+.modal_bottom {
+    padding: 0 20px 20px 20px;
+}
+.list_detailPage a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    height: 24px;
+    font-size: 12px;
+    color: white;
+    background-color: #0000005f;
+    font-weight: bold;
+    gap: 8px;
+    border-radius: 2px;
+}
+.icon_movePage{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../../image/icon_movePage.png);
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#new_inventory_tmsc_form .editor{
+    width: 100%;
+    height: 250px;
+    max-width: 610px;
+}
+.modal_main{
+    padding: 30px 30px 20px;
+}
+.modal_bottom{
+    padding: 0 30px 20px;
+    border: none;
+    justify-content: center;
+}
+.form_inventory_row_bundle{
+    display: flex;
+    gap: 20px;
+
+}
+.form_inventory_row_bundle > .input_row{
+    flex-shrink: 1;
+    flex-grow: 1;
+}

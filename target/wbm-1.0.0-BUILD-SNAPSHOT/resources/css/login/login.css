@@ -1,0 +1,283 @@
+@charset "utf-8";
+
+body{
+    background: #F4F4F4;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login_bg{
+    flex-grow: 1;
+    height: 100vh;
+    background: url(../../image/login_bg.png) no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+    background-position: center;
+}
+
+.login_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 35%;
+    min-width: 600px;
+    height: 100vh; */
+    width: 500px;
+    height: 600px;
+    background: #F9F9F9;
+    border: 5px solid #fff;
+}
+
+.login_content{
+    width: 375px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* gap: 40px; */
+
+}
+
+.login_content form{
+    width: 100%;
+}
+
+.login_content form ul{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.login_content input{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 16px;
+    padding-left: 45px;
+}
+
+.login_content input::placeholder {
+    color: #AFAFAF;
+  }
+
+.login_input{
+    position: relative;
+    height: 45px;
+}
+
+.login_content button{
+    width: 100%;
+    height: 50px;
+    background: #326EDC;
+    color: white;
+    border: 1px solid #ffffff28;
+    margin-top: 40px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.login_more{
+    padding-top: 8px;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.login_more a,
+.login_more span{
+    color: #888;
+}
+
+.login_input_icon {
+    /* background: red; */
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+}
+
+.login_input_icon span {
+    background: url("../../image/icon_login.png") no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.login_pw .login_input_icon span{
+    background-position: -24px 0;
+}
+
+
+
+/* 여기서부터 작성 */
+
+.modal_content{
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 620px;
+    min-height: 513px
+}
+.modal_content_box{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 380px;
+}   
+
+.modal_content_box ul{
+    width: 100%;
+}
+
+.modal_close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.modal_content_box button{
+    width: 100%;
+    height: 50px;
+}
+
+.modal_content input,
+.modal_content select{
+    width: 100%;
+    height: 33px;
+}
+
+.modal_content label{
+    padding-bottom: 2px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.doubleinput_wrap{
+    display: flex;
+    gap: 8px;
+}
+.doubleinput_wrap input{
+    flex-grow: 1;
+}
+.doubleinput_wrap button{
+    width: 70px;
+    height: 33px;
+    background: #E8E8E8;
+    border: 1px solid #DFDFDF;
+    font-size: 13px;
+} 
+
+.doubleinput_wrap select{
+    width: 135px;
+    height: 33px;
+}
+
+.modal_content_box > button{
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+.content_signUp > button,
+.content_informPwd > button{
+    background: #326EDC;
+    border: 1px solid rgba(225, 225, 225, 0.5);
+}
+
+.terms_desc{
+    font-size: 13px;
+    line-height: 20px;
+    color: #326EDC;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: bold;
+    display: none;
+}
+
+.find_desc{
+    font-size: 13px;
+    line-height: 20px;
+    color: #326EDC;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+input:focus,
+.modal_content input[type="text"]:focus{
+    border: 1px solid #326ddc;
+}
+
+.content_findPwd > button{
+    background: #888;
+    border: 1px solid rgba(225, 225, 225, 0.5);
+}
+
+.pwd_R_text{
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.modal_confirm{
+    width: 619px;
+}
+
+.content_informPwd{
+    text-align: center;
+}
+
+.content_informPwd > div{
+    font-size: 13px;
+}
+
+.content_informPwd > div p{
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.content_informPwd > div span{
+    color: #326EDC;
+}
+
+.content_informPwd b{
+    padding: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal_logo,
+h2{
+    width: 150px;
+}
+h2{
+    padding-top: 16px;
+}
+
+.modal_logo img,
+h2 img{
+    width: 100%;
+    object-fit: contain;
+}
+
+h1{
+    font-size: 50px;
+    color: #575757;
+    font-weight: bold;
+}
+.login_content > h1{
+    padding-bottom: 20px;
+    font-size: 45px;
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="baseLayout"  template="/WEB-INF/views/layout/body_main.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
+   		<put-attribute name="body" value="" />
+   	</definition>
+
+   	<definition name="/" extends="baseLayout">
+      	<put-attribute name="body" value="/WEB-INF/views/main.jsp" />
+   	</definition>
+   	<definition name="main" extends="baseLayout">
+      	<put-attribute name="body" value="/WEB-INF/views/main.jsp" />
+   	</definition>
+   	<definition name="setting" extends="baseLayout">
+      	<put-attribute name="body" value="/WEB-INF/views/setting.jsp" />
+   	</definition>
+   	<definition name="compute" extends="baseLayout">
+      	<put-attribute name="body" value="/WEB-INF/views/compute.jsp" />
+   	</definition>
+   	<definition name="revenue" extends="baseLayout">
+      	<put-attribute name="body" value="/WEB-INF/views/revenue.jsp" />
+   	</definition>
+   	<definition name="inventory" extends="baseLayout">
+      	<put-attribute name="body" value="/WEB-INF/views/inventory.jsp" />
+   	</definition>
+   	<definition name="inventory_sub" extends="baseLayout">
+      	<put-attribute name="body" value="/WEB-INF/views/inventory_sub.jsp" />
+   	</definition>
+</tiles-definitions>

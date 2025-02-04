@@ -1,0 +1,635 @@
+@charset "utf-8";
+
+main .top_content {
+    gap: 20px;
+    justify-content: center;
+}
+.search_wrap {
+    position: static;
+    transform: none;
+}
+/* .top_content input{
+    height: 36px;
+} */
+.detail_search_wrap input {
+    height: 36px;
+}
+#mainList th {
+    padding: 0 6px;
+    white-space: nowrap;
+}
+
+.list_Bname {
+    word-break: keep-all;
+}
+
+/* 수정0812 css */
+
+#new_business_form .form_top > div {
+    width: 50%;
+}
+#formContractInfo .form_left .input_wrap {
+    width: 300px;
+}
+#formContractInfo .form_right {
+    width: 300px;
+}
+.filebox label {
+    height: 20px;
+}
+#new_business_form .input_tit,
+#new_contract_form .input_tit {
+    min-width: auto;
+    height: auto;
+    display: flex;
+    height: 20px;
+    align-items: center;
+}
+#new_business_form .form_right .file_row,
+#new_contract_form .form_right .file_row {
+    height: auto;
+}
+#new_business_form input,
+#new_contract_form input {
+    height: 30px;
+}
+#new_business_form .input_row,
+#new_contract_form .input_row {
+    margin-bottom: 12px;
+}
+#new_business_form .input_row:last-child,
+#new_contract_form .input_row:last-child {
+    margin-bottom: 0;
+}
+#new_business_form .editor {
+    height: 404px;
+    width: 100%;
+}
+
+#new_contract_form > div:has(form) {
+    padding: 30px;
+    min-width: 270px;
+}
+/* #new_contract_form .filebox{
+    position: relative;
+}
+#new_contract_form .btn_preview_tab_wrap{
+    position: absolute;
+} */
+
+#formContractInfo .form_right {
+    width: 767px;
+    overflow: hidden;
+    flex-grow: 1;
+    /* display: flex;
+    flex-direction: column; */
+}
+/* #new_contract_form .input_row:has(#contractInfoMemo){
+    flex-grow: 1;
+} */
+#new_contract_form .preview_tab_content {
+    min-height: 136px;
+    border: 1px solid #ddd;
+}
+#new_contract_form .btn_file_wrap {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.btn_auto_calculate {
+    border: none;
+}
+#new_contract_form .file_row {
+    height: auto;
+    flex-grow: 0;
+}
+#new_contract_form .preview {
+    height: 214px;
+    overflow: auto;
+    border: 1px solid #d8d9dc;
+}
+#new_contract_form .preview .file_name p {
+    width: 600px;
+}
+#new_contract_form .filebox {
+    flex-shrink: 1;
+}
+#new_contract_form .file_wrap {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.editor_menu_wrap .input_tit {
+    align-self: center;
+}
+#formContractReadyMoney {
+    height: 556px;
+}
+/* #formContractReadyMoney .input_row{
+    flex-direction: row;
+} */
+/* #formContractReadyMoney .form_top{
+    height: 195px;
+} */
+#formContractReadyMoney input {
+    height: 30px;
+}
+#formContractReadyMoney .form_left {
+    width: 300px;
+}
+/* 기성금*/
+#formContractReadyMoney .form_top {
+    gap: 20px;
+    padding-bottom: 10px;
+}
+#formContractReadyMoney .form_top > div {
+    width: 100%;
+}
+#formContractReadyMoney .form_left .input_wrap {
+    width: 100%;
+}
+#formContractReadyMoney textarea {
+    width: 100%;
+    height: 30px;
+    min-width: 100%;
+    min-height: 30px;
+    border: 1px solid #d8d9dc;
+}
+/* 매입 */
+#formPurchaseInfo .input_row {
+    flex-direction: row;
+    align-items: center;
+}
+#formPurchaseInfo .input_tit {
+    min-width: 50px;
+}
+#formPurchaseInfo .form_top {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+#formPurchaseInfo .form_top .form_right {
+    flex-grow: 1;
+}
+#formPurchaseInfo .form_btn_area {
+    padding-top: 5px;
+}
+#formPurchaseInfo .modal_list {
+    height: 257px;
+}
+#formPurchaseInfo .btn_modal_formTab_wrap {
+    width: 449px;
+    justify-content: space-between;
+    gap: 20px;
+    position: absolute;
+    margin-left: 10px;
+    top: 20px;
+}
+#formPurchaseInfo .form_bottom {
+    padding: 0 30px 20px;
+}
+#formPurchaseInfo .form_left .inputs_bundle > div {
+    width: 176px;
+}
+#formPurchaseInfo .form_left .inputs_bundle > input {
+    flex-grow: 1;
+}
+.purchase_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    width: 100%;
+}
+#new_Purchase_form .preview_tab_content {
+    min-height: 188px;
+}
+#new_Purchase_form .preview_tab_wrap {
+    height: 190px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+}
+/* 관리자 */
+#bill_info_save {
+    background: #326edc;
+    color: white;
+}
+#modalContractAdmin {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 100%;
+    z-index: 100;
+    transform: translateY(-51%);
+    background: #f4f4f4;
+    height: 672px;
+    border-radius: 0 20px 20px 0;
+}
+#formContractAdmin {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#new_contract_form #modalContractAdmin {
+    padding: 0;
+    display: none;
+}
+#modalContractAdmin .editor {
+    height: 200px;
+}
+#modalContractAdmin .form_top {
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 16px;
+}
+#modalContractAdmin .form_top .input_row:nth-child(5) {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+#modalContractAdmin input[type="radio"] {
+    height: 15px;
+}
+#modalContractAdmin .input_wrap:has(input[type="radio"]) {
+    display: flex;
+    align-items: center;
+}
+#modalContractAdmin .select_box select {
+    background: white;
+}
+#modalContractAdmin .input_desc {
+    white-space: nowrap;
+    padding: 30px 30px 0;
+    display: flex;
+    color: #7b7f83;
+    font-size: 17px;
+    gap: 15px;
+    align-items: center;
+}
+#modalContractAdmin .input_row {
+    margin-bottom: 0;
+}
+#modalContractAdmin .modal_admin_content {
+    padding-top: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px 30px;
+}
+#modalContractAdmin .inputs_bundle > div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+#modalContractAdmin .modal_bottom {
+    border-top: none;
+}
+#adminMemo {
+    border: 1px solid #d8d9dc;
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+#contract_admin {
+    width: 90px;
+    height: 36px;
+    border: #ffffff3b;
+    background: #093585;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    color: white;
+}
+#contract_admin > .icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+    background-image: url(../../image/icon_admin_modal.png);
+    background-repeat: no-repeat;
+}
+#modalContractAdmin .modal_bottom {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.input_row:has(#payCollect),
+.input_row:has(#billType) {
+    flex-direction: row;
+    gap: 10px;
+}
+.form_left_inputs_bundle {
+    display: flex;
+    gap: 5px;
+}
+.form_left_inputs_bundle > .input_row {
+    min-width: 155px;
+}
+.form_left_inputs_bundle > .input_row:last-child {
+    flex-grow: 1;
+}
+/* btn_onoff  */
+.btn_onoff input[type="checkbox"] + label,
+.btn_onoff input[type="radio"] + label {
+    width: 56px;
+    height: 25px;
+    position: relative;
+    background: #d9d9d9;
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.btn_onoff input[type="checkbox"] + label::after,
+.btn_onoff input[type="radio"] + label::after {
+    content: "";
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    left: 3px;
+    transition: left 0.5s;
+}
+.btn_onoff input[type="checkbox"]:checked + label {
+    background: #1472ff;
+    transition: all 0.5s;
+}
+
+.btn_onoff input[type="checkbox"]:checked + label::after,
+.btn_onoff input[type="radio"]:checked + label::after {
+    left: 34px;
+    transition: left 0.5s;
+}
+
+.btn_onoff input[type="checkbox"]:checked + label::before,
+.btn_onoff input[type="radio"]:checked + label::before {
+    position: absolute;
+    content: "YES";
+    font-size: 12px;
+    left: 9px;
+    color: white;
+    font-weight: bold;
+    top: 4px;
+}
+
+.btn_onoff input[type="checkbox"] + label::before,
+.btn_onoff input[type="radio"] + label::before {
+    position: absolute;
+    content: "NO";
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    left: 26px;
+    top: 4px;
+}
+
+/* #billType:checked + label {
+    background: #20c702;
+}
+#billType + label {
+    background: #fb3333;
+} */
+.input_row:has(.btn_onoff) {
+    justify-content: space-between;
+}
+#formAdmin_close {
+    display: inline-block;
+    background-image: url("../../image/icon_admin_close.png");
+    background-size: 20px;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: none;
+}
+.input_wrap.btn_onoff {
+    flex-grow: 0;
+}
+.contract_info {
+    word-break: keep-all;
+    line-height: 25px;
+}
+
+#contract_info_edit {
+    background: #f19f00;
+    border: 1px solid #f5ba47;
+    color: white;
+}
+#contract_info_del {
+    background: #6b6b6b;
+    border: 1px solid #949494;
+    color: white;
+}
+#contract_info_save {
+    background: #326edc;
+    border: 1px solid #749de8;
+    color: white;
+}
+.icon[memo_code="0"] {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-position: 0 0;
+    background-image: url(../../image/icon_memo.png);
+}
+.icon[memo_code="1"] {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-position-x: -16px;
+    background-image: url(../../image/icon_memo.png);
+}
+.modal_formTab .form_left {
+    padding-top: 50px;
+}
+
+.modal_wrap {
+    /* width: 910px; */
+    width: 680px;
+    /* width: 500px; */
+    /* height: calc(100% - 40px); */
+}
+.btn_modal_formTab {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 40px;
+    width: 100%;
+    background: #e7e7e7;
+    border-radius: 5px;
+    padding: 2px;
+}
+.comoute_modal .modal_bottom {
+    justify-content: center;
+}
+
+.btn_modal_formTab > div:not(.purchase_wrap) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #9696a0;
+    height: 100%;
+    cursor: pointer;
+    width: 50%;
+    text-align: center;
+}
+.btn_modal_formTab > div.active .btn_modal_formTab > div.active {
+    color: #000;
+    position: relative;
+}
+.btn_modal_formTab > div.active {
+    background: #326edc;
+    color: white;
+    border-radius: 5px;
+}
+/* .btn_modal_formTab > div.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #326edc;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+.modal_formTab {
+    display: none;
+    padding: 10px 0;
+}
+.modal_formTab.active {
+    display: block;
+}
+
+.comoute_modal {
+    max-width: 612px;
+}
+.comoute_modal .input_tit {
+    min-width: 110px;
+}
+.comoute_modal .editor {
+    height: 230px;
+}
+.comoute_modal .modal_bottom {
+    padding: 15px 20px 30px 20px;
+}
+
+.contract_tabItem[data-tabnum="1"] .editor {
+    height: 173px;
+}
+.file_wrap {
+    /* width: calc(100% - 84px); */
+    /* height: calc(100% - 41px); */
+    height: auto;
+}
+
+.contract_tabItem[data-tabnum="2"] .list {
+    /* height: 300px; */
+    overflow-y: auto;
+}
+.contract_tabItem[data-tabnum="3"] .list {
+    height: 150px;
+    overflow-y: auto;
+}
+.list_top_total {
+    background: #f3f3f4;
+}
+.list_top_total td {
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+}
+.bottom_left button {
+    background: #326edc;
+    border: 1px solid #749de8;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+/* #new_business_form .editor{
+    height: 336px;
+    width: 100%;
+    
+} */
+#new_contract_form .editor {
+    /* height: 180px;
+    width: 784px; */
+    height: 355px;
+    width: 784px;
+}
+#new_compute_form .editor {
+    height: 250px;
+    width: 550px;
+}
+
+#compltedPreview .file_name p,
+#purchase1Preview .file_name p,
+#purchase2Preview .file_name p {
+    width: 640px;
+}
+/* 정산서 */
+.form_compute_rows_bundle {
+    display: flex;
+    gap: 20px;
+}
+.form_compute_rows_bundle > .input_row {
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+#form_compute_info {
+    padding: 30px 30px 15px;
+}
+
+/* 0829 수정 */
+.top_content > .search_wrap:nth-child(2) {
+    width: auto;
+}
+.top_content > .search_wrap:nth-child(2) > .select_box {
+    width: 120px;
+}
+#btn_search {
+    border: 1px solid #326edc47;
+    background: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+#mainList tbody tr .icon {
+    width: 57px;
+    height: 18px;
+    display: inline-block;
+}
+.list_send .icon {
+    background: url(../../image/icon_send.png);
+}
+.list_send .icon.notSend {
+    background-position-y: -18px;
+}
+.list_payment .icon {
+    background: url(../../image/icon_payment.png);
+}
+.list_payment .icon.unpayment {
+    background-position-y: -18px;
+}
+.list_agreement .icon {
+    background: url(../../image/icon_agreement.png);
+}
+.list_agreement .icon.disagree {
+    background-position-y: -18px;
+}
+.totalTr td {
+    font-weight: bold;
+}
+.top_right:has(.btn_prevStep) {
+    margin-left: auto;
+}
