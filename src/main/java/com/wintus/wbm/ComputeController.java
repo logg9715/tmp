@@ -38,7 +38,7 @@ public class ComputeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ComputeController.class);
 	
-	// 관제센터 현황 정보 처음 페이지 로딩 시 처리.
+	// 관제센터 현황 정보 처음 페이지 로딩 시 처리..
 	@RequestMapping(value= "compute" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView compute(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		ModelAndView mav = new ModelAndView();
